@@ -11,6 +11,15 @@ class LaruloginServiceProvider extends ServiceProvider {
 	 */
 	protected $defer = false;
 
+    public function boot()
+    {
+        $this->package('bitw/larulogin');
+
+        include __DIR__ . '/../../routes.php';
+
+        $this->addFormMacro();
+    }
+
 	/**
 	 * Register the service provider.
 	 *
@@ -30,5 +39,23 @@ class LaruloginServiceProvider extends ServiceProvider {
 	{
 		return array();
 	}
+
+    public function addFormMacro()
+    {
+        app('form')->macro('uLogin', function($options = array())
+        {
+            $configOptions = app('config')->get('larulogin::options', array());
+
+            $mergedOptions = array_merge($configOptions, $options);
+
+            $data = array(
+                'options'		=> $mergedOptions,
+            );
+
+            $view = 'larulogin::ulogin';
+
+            return app('view')->make($view, $data);
+        });
+    }
 
 }
