@@ -37,7 +37,7 @@ Create table (apply migration) `php artisan migrate --package=bitw/larulogin`
 Connect and configure uLogin
 ----------------------------
 
-In [личном кабинете](https://ulogin.ru/lk.php) you need to add your site and confirm the test.
+In [your account](https://ulogin.ru/lk.php) you need to add your site and confirm the test.
 
 
 Use
