@@ -1,30 +1,59 @@
-larulogin
-=========
+larulogin Laravel Package
+=========================
 
-Пакет для работы с сервисом [uLogin](https://ulogin.ru/)
+Package for working with service [uLogin](https://ulogin.ru/)
 
-Установка
----------
 
-Выполняем `composer require bitw/larulogin:dev-master`
+Requirements
+------------
 
-Подключаем /app/config/app.php `'providers' => array( ...` добавить `'Bitw\Larulogin\LaruloginServiceProvider',`
+- PHP >= 5.3
 
-Импортируем конфигурацию `php artisan config:publish bitw/larulogin`
+- Laravel >= 4.0
 
-Создаем таблицу (выполняем миграцию) `php artisan migrate --package=bitw/larulogin`
 
-Поключение uLogin
------------------
+Installation
+------------
 
-В [личном кабинете](https://ulogin.ru/lk.php) необходимо добавить свой сайт и подтвердить проверку.
+Execute `composer require bitw/larulogin:dev-master` or include to `composer.json`
+```
+{
+    "require": {
+        "bitw/larulogin": "dev-master"
+    }
+}
+```
 
-Настройка пакета
+Add provider in `/app/config/app.php`
+```
+    'providers' => array( ...` добавить `'Bitw\Larulogin\LaruloginServiceProvider',
+```
+
+Publish configuration file `php artisan config:publish bitw/larulogin`
+
+Create table (apply migration) `php artisan migrate --package=bitw/larulogin`
+
+
+Connect and configure uLogin
+----------------------------
+
+In [личном кабинете](https://ulogin.ru/lk.php) you need to add your site and confirm the test.
+
+
+Use
+---
+
+Call
+```Form::uLogin()```
+
+
+Config package
 ----------------
 
+...
 
 
-Использование
--------------
+Licence
+-------
 
-Генерация элемента `Form::uLogin()`
+[larulogin](https://github.com/bitw/larulogin) is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
