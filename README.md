@@ -26,7 +26,11 @@ Execute `composer require bitw/larulogin:dev-master` or include to `composer.jso
 
 Add provider in `/app/config/app.php`
 ```
-    'providers' => array( ...` добавить `'Bitw\Larulogin\LaruloginServiceProvider',
+    'providers' => array( ...
+```
+include
+```
+    'Bitw\Larulogin\LaruloginServiceProvider',
 ```
 
 Publish configuration file `php artisan config:publish bitw/larulogin`
