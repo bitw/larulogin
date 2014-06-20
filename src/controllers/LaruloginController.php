@@ -5,7 +5,8 @@ class LaruloginController extends \BaseController
 
     public function getUlogin()
     {
-        return __METHOD__;
+        //return __METHOD__;
+        return var_export(Config::get('larulogin::redirect'), 1);
     }
 
     public function postUlogin()
@@ -17,6 +18,8 @@ class LaruloginController extends \BaseController
         //$user['first_name'] - имя пользователя
         //$user['last_name'] - фамилия пользователя
         var_dump($user);
+
+
     }
 
 }
