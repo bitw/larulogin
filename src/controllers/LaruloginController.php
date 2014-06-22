@@ -17,9 +17,10 @@ class LaruloginController extends \BaseController
         //$user['identity'] - уникальная строка определяющая конкретного пользователя соц. сети
         //$user['first_name'] - имя пользователя
         //$user['last_name'] - фамилия пользователя
-        var_dump($user);
 
+        $ulogin = new Ulogin();
 
+        $ulogin->create(Input::all());
     }
 
 }
