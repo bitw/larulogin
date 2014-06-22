@@ -1,12 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Andrew
- * Date: 22.06.14
- * Time: 13:47
- */
 
-class Ulogin extends Eloquent
+use Illuminate\Database\Eloquent\Model;
+
+class Ulogin extends Model
 {
     protected $table = 'ulogin';
 
