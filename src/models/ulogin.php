@@ -6,7 +6,7 @@
  * Time: 13:47
  */
 
-class Uogin extends Eloquent
+class Ulogin extends Eloquent
 {
     protected $table = 'ulogin';
 
