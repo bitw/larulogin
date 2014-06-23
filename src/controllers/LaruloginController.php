@@ -91,10 +91,13 @@ class LaruloginController extends \BaseController
 
             $authClassic = Auth::loginUsingId($user->id);
 
-            $authSentry = Sentry::authenticate(array(
-                'email'     => $_user['email'],
-                'password'  => $password
-            ), true);
+            if(class_exists('Sentry'))
+            {
+                $authSentry = Sentry::authenticate(array(
+                    'email'     => $_user['email'],
+                    'password'  => $password
+                ), true);
+            }
 
             return Redirect::to('/');
 
@@ -107,7 +110,6 @@ class LaruloginController extends \BaseController
                 )),
                 401
             );
-
         }
     }
 
