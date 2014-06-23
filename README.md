@@ -47,7 +47,8 @@ In [your account](https://ulogin.ru/lk.php) you need to add your site and confir
 Use
 ---
 
-Call `Form::uLogin()`
+Call `<?=Form::uLogin()?>` or `<?=Form::uLogin(['mode'=>'window'])?>`
+
 
 
 Licence

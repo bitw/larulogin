@@ -8,7 +8,7 @@
 
 return array(
 
-    'use_mode' => 'small', // small | panel | window
+    'mode' => 'small', // small | panel | window
 
     'modes'    => [
         'small' => [

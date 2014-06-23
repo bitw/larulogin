@@ -46,17 +46,23 @@ class LaruloginServiceProvider extends ServiceProvider {
         {
             if(\Auth::check()) return '';
 
-            $configOptions = app('config')->get('larulogin::options', array());
+            if(!isset($options['mode'])) $options['mode'] = app('config')->get('larulogin::mode');
 
-            $mergedOptions = array_merge($configOptions, $options);
+            $configOptions = app('config')->get('larulogin::modes', array());
 
+            $mergedOptions = ['options' => array_merge($configOptions, $options)];
+
+            $options = $configOptions[$options['mode']];
+
+            $data_ulogin = str_replace('%2C', ',', http_build_query($options, '', ';'));
+/*
             $data = array(
                 'options'		=> $mergedOptions,
             );
-
+*/
             $view = app('config')->get('larulogin::views.ulogin');
 
-            return app('view')->make($view, $data);
+            return \View::make($view, $options, ['data_ulogin'=>$data_ulogin]);
         });
     }
 
