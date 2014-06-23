@@ -88,7 +88,7 @@ class LaruloginController extends \BaseController
 
 
             $ulogin->save();
-/*
+
             $authClassic = Auth::loginUsingId($user->id);
 
             $authSentry = Sentry::authenticate(array(
@@ -97,7 +97,7 @@ class LaruloginController extends \BaseController
             ), true);
 
             return Redirect::to('/');
-*/
+
         }
         else
         {

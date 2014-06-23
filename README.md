@@ -50,12 +50,6 @@ Use
 Call `Form::uLogin()`
 
 
-Config package
-----------------
-
-...
-
-
 Licence
 -------
 

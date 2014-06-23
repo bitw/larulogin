@@ -44,6 +44,8 @@ class LaruloginServiceProvider extends ServiceProvider {
     {
         app('form')->macro('uLogin', function($options = array())
         {
+            if(\Auth::check()) return '';
+
             $configOptions = app('config')->get('larulogin::options', array());
 
             $mergedOptions = array_merge($configOptions, $options);
