@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Database\Eloquent\Model;
-
-class Ulogin extends Model
+class Ulogin extends Eloquent
 {
     protected $table = 'ulogin';
 

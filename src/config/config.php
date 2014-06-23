@@ -7,13 +7,20 @@
  */
 
 return array(
-/*
-    'providers' =>  'vkontakte,odnoklassniki,mailru,facebook,twitter,'.
-                    'google,yandex,livejournal,openid,lastfm,'.
-                    'linkedin,liveid,soundcloud,steam,flickr,'.
-                    'uid,youtube,webmoney,foursquare,tumblr,'.
-                    'googleplus,dudu,vimeo,instagram',
-*/
-    'redirect' => '/ulogin',
+
+    'template'  => 'default',
+
+    'out'       => 'content',
+
+    'redirect'  => '/ulogin',
+
+    'views'     => [
+        'ulogin'    => 'larulogin::ulogin',
+        'error'     => 'larulogin::error',
+    ],
+
+    'add_to_groups' => [
+
+    ],
 
 );

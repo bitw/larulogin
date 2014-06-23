@@ -52,7 +52,7 @@ class LaruloginServiceProvider extends ServiceProvider {
                 'options'		=> $mergedOptions,
             );
 
-            $view = 'larulogin::ulogin';
+            $view = app('config')->get('larulogin::views.ulogin');
 
             return app('view')->make($view, $data);
         });
