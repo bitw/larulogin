@@ -39,8 +39,11 @@ class LaruloginController extends \BaseController
         {
             Auth::loginUsingId($check->user_id, true);
 
-            $authSentry = Sentry::findUserById($check->user_id);
-            Sentry::login($authSentry, true);
+            if(class_exists('Sentry'))
+            {
+                $authSentry = Sentry::findUserById($check->user_id);
+                Sentry::login($authSentry, true);
+            }
 
             return Redirect::to('/');
         }
