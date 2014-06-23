@@ -39,8 +39,11 @@ class LaruloginController extends \BaseController
         {
             Auth::loginUsingId($check->user_id, true);
 
-            $authSentry = Sentry::findUserById($check->user_id);
-            Sentry::login($authSentry, true);
+            if(class_exists('Sentry'))
+            {
+                $authSentry = Sentry::findUserById($check->user_id);
+                Sentry::login($authSentry, true);
+            }
 
             return Redirect::to('/');
         }
@@ -91,10 +94,13 @@ class LaruloginController extends \BaseController
 
             $authClassic = Auth::loginUsingId($user->id);
 
-            $authSentry = Sentry::authenticate(array(
-                'email'     => $_user['email'],
-                'password'  => $password
-            ), true);
+            if(class_exists('Sentry'))
+            {
+                $authSentry = Sentry::authenticate(array(
+                    'email'     => $_user['email'],
+                    'password'  => $password
+                ), true);
+            }
 
             return Redirect::to('/');
 
@@ -107,7 +113,6 @@ class LaruloginController extends \BaseController
                 )),
                 401
             );
-
         }
     }
 
