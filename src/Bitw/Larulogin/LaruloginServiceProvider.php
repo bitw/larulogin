@@ -52,7 +52,7 @@ class LaruloginServiceProvider extends ServiceProvider {
 
             $mergedOptions = ['options' => array_merge($configOptions, $options)];
 
-            $options = $configOptions[$options['mode']];
+            $options = $mergedOptions['options'][$options['mode']];
 
             $data_ulogin = str_replace('%2C', ',', http_build_query($options, '', ';'));
 /*
