@@ -9,7 +9,7 @@ Requirements
 
 - PHP >= 5.3
 
-- Laravel 4.*, 5.*
+- Laravel 4.\*, 5.\*
 
 
 Installation
